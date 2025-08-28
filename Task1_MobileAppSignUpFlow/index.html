@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Flow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Welcome Screen -->
+    <div class="card" id="welcomeScreen">
+      <h2>Welcome</h2>
+      <p>Please login or signup to continue using our app.</p>
+      <button onclick="showScreen('signupScreen')">Sign Up</button>
+      <p>Already have an account? 
+        <a href="#" onclick="showScreen('loginScreen')">Login</a>
+      </p>
+    </div>
+
+    <!-- Sign Up Screen -->
+    <div class="card hidden" id="signupScreen">
+      <h2>Sign Up</h2>
+      <input type="email" id="signupEmail" placeholder="Enter your Email">
+      <input type="password" id="signupPassword" placeholder="Enter your password">
+      <input type="password" id="signupConfirmPassword" placeholder="Re-enter password">
+      <label>
+        <input type="checkbox" id="termsCheck"> I agree with privacy policy
+      </label>
+      <button onclick="signup()">Signup</button>
+      <p>Already have an account? 
+        <a href="#" onclick="showScreen('loginScreen')">Login</a>
+      </p>
+    </div>
+
+    <!-- Login Screen -->
+    <div class="card hidden" id="loginScreen">
+      <h2>Log In</h2>
+      <input type="email" id="loginEmail" placeholder="Enter your Email">
+      <input type="password" id="loginPassword" placeholder="Enter your password">
+      <button onclick="login()">Login</button>
+      <br>
+      <a href="#" onclick="showScreen('forgotPasswordScreen')">Forgot Password?</a>
+      <p>Don't have an account? 
+        <a href="#" onclick="showScreen('signupScreen')">Sign Up</a>
+      </p>
+    </div>
+
+    <!-- Forgot Password Screen -->
+    <div class="card hidden" id="forgotPasswordScreen">
+      <h2>Forgot Password? Create a New Password</h2>
+      <p>Enter your registered email id to reset your password</p>
+      <input type="email" id="forgotPasswordEmail" placeholder="Enter your registered email id">
+      <button onclick="forgotPassword()">Send Password Reset Link</button>
+      <p>
+        <a href="#" onclick="showScreen('loginScreen')">Back to Login</a>
+      </p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
